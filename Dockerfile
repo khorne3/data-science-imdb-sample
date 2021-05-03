@@ -25,7 +25,7 @@ RUN useradd -mUs /bin/bash coder
 USER coder
 
 # Install poetry
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
 
 # Add poetry to path
 ENV PATH $PATH:/home/coder/.poetry/bin
