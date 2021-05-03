@@ -3,19 +3,18 @@ FROM ubuntu:20.04
 # Basic utilities
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     curl \
-    python \
-    python-pip \
+    python3 \
+    python3-pip \
     wget \
     man \
     htop \
     git \
     vim \
     jq \
-    openssh \
+    ssh \
     docker \
     gcc \
     net-tools \
-    inetutils \
     rsync
 
 # Enable passwordless sudo for any user
