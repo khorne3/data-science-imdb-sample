@@ -1,4 +1,4 @@
-FROM archlinux/base
+FROM archlinux:base
 SHELL ["/bin/bash", "-c"]
 
 # Basic utilities
