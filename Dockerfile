@@ -35,11 +35,11 @@ ENV PATH $PATH:/home/coder/.poetry/bin
 RUN sudo pip3 install jupyterlab
 
 # Install pycharm.
-RUN mkdir -p /opt/pycharm
-RUN curl -L "https://download.jetbrains.com/product?code=PCC&latest&distribution=linux" | tar -C /opt/pycharm --strip-components 1 -xzvf -
+RUN sudo mkdir -p /opt/pycharm
+RUN sudo curl -L "https://download.jetbrains.com/product?code=PCC&latest&distribution=linux" | sudo tar -C /opt/pycharm --strip-components 1 -xzvf -
 
 # Add a binary to the PATH that points to the pycharm startup script.
-RUN ln -s /opt/pycharm/bin/pycharm.sh /usr/bin/pycharm-community
+RUN sudo ln -s /opt/pycharm/bin/pycharm.sh /usr/bin/pycharm-community
 
 # go to coder home directory
 WORKDIR /home/coder
