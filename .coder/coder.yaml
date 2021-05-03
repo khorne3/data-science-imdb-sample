@@ -2,7 +2,7 @@ version: 0.1
 workspace:
   type: "kubernetes"
   spec:
-    image: index.docker.io/marktmilligan/python3-pycharm:vsix
+    image: index.docker.io/iamhughes/data-science-sample:latest
     container-based-vm: false
     cpu: 4
     memory: 8 
