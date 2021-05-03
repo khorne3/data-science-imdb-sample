@@ -1,16 +1,13 @@
-FROM archlinux:base
-SHELL ["/bin/bash", "-c"]
+FROM ubuntu:20.04
 
 # Basic utilities
-RUN pacman --noconfirm -Syu \
-    base \
-    base-devel \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
+    curl \
     python \
     python-pip \
     wget \
     man \
     htop \
-    shellcheck \
     git \
     vim \
     jq \
