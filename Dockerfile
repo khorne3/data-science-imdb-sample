@@ -15,7 +15,8 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     docker \
     gcc \
     net-tools \
-    rsync
+    rsync \
+    sudo
 
 # Enable passwordless sudo for any user
 COPY sudoers /etc/sudoers
