@@ -1,4 +1,4 @@
-# IMDB Movie DB
+# IMDB Movie Ratings
 
 A Sample data science project with IMDB movie data.
 
