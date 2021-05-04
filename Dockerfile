@@ -3,20 +3,20 @@ FROM ubuntu:20.04
 # Basic utilities
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     curl \
-    python3 \
-    python3-pip \
-    wget \
-    man \
-    htop \
-    git \
-    vim \
-    jq \
-    ssh \
     docker \
     gcc \
+    git \
+    htop \
+    jq \
+    man \
     net-tools \
+    python3 \
+    python3-pip \
     rsync \
-    sudo
+    ssh \
+    sudo \
+    vim \
+    wget
 
 # Enable passwordless sudo for any user
 COPY sudoers /etc/sudoers
