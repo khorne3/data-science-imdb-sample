@@ -5,10 +5,10 @@ A Sample data science project in Jupyter notebook form, with IMDB movie data.  T
 ## Getting Started
 
 ##### demo.cdr.dev Kubernete cluster
-[![Open in Coder](https://cdn.coder.com/embed-button.svg)](https://demo.cdr.dev/wac/build?project_oauth_service=github&template_oauth_service=github&project_url=git@github.com:mtm20176/data-science-imdb-sample.git&template_url=https://github.com/marktmilligan/data-science-imdb-sample&template_ref=main&template_filepath=.coder/coder.yaml)
+[![Open in Coder](https://cdn.coder.com/embed-button.svg)](https://demo.cdr.dev/wac/build?project_oauth_service=github&template_oauth_service=github&project_url=git@github.com:mtm20176/data-science-imdb-sample.git&template_url=https://github.com/mtm20176/data-science-imdb-sample&template_ref=main&template_filepath=.coder/coder.yaml)
 
 ##### mark.demo.coder.com Kubernete cluster
-[![Open in Coder](https://cdn.coder.com/embed-button.svg)](https://mark.demo.coder.com/wac/build?project_oauth_service=github&template_oauth_service=github&project_url=git@github.com:mtm20176/data-science-imdb-sample.git&template_url=https://github.com/marktmilligan/data-science-imdb-sample&template_ref=main&template_filepath=.coder/coder.yaml)
+[![Open in Coder](https://cdn.coder.com/embed-button.svg)](https://mark.demo.coder.com/wac/build?project_oauth_service=github&template_oauth_service=github&project_url=git@github.com:mtm20176/data-science-imdb-sample.git&template_url=https://github.com/mtm20176/data-science-imdb-sample&template_ref=main&template_filepath=.coder/coder.yaml)
 
 ### Credit
 
