@@ -1,43 +1,60 @@
-version: 0.1
+version: 0.2
 workspace:
-  type: "kubernetes"
-  spec:
-    image: index.docker.io/marktmilligan/python3-pycharm:vsix
-    container-based-vm: false
-    cpu: 4
-    memory: 8 
-    disk: 10
-    gpu-count: 0
-    labels:
-      com.coder.custom.python.version: "3.8.5"
-      com.coder.custom.pycharm.version: "2021.1.1"    
-      com.coder.custom.chargeback: "ds301"
-  configure:
-    start:
-      - name: install 1 vscode extensions (vsix) from open vsx
-        directory: /home/coder/
-        shell: /bin/bash
-        command: SERVICE_URL=https://open-vsx.org/vscode/gallery ITEM_URL=https://open-vsx.org/vscode/item /opt/coder/code-server/bin/code-server --install-extension ms-python.python        
-      - name: install 2 vscode extensions (vsix) from image
-        directory: /home/coder/
-        shell: /bin/bash
-        command: |
-          /opt/coder/code-server/bin/code-server --install-extension /vsix/ms-toolsai.jupyter.2020.12.1.vsix
-          /opt/coder/code-server/bin/code-server --install-extension /vsix/dongli.python-preview-0.0.4.vsix  
-      - name: install python packages
-        directory: /home/coder/
-        shell: /bin/bash
-        command: |
-          sudo pip3 install pandas
-          sudo pip3 install scikit-learn
-          sudo pip3 install sklearn
-          sudo pip3 install matplotlib
-          sudo pip3 install flask
-          sudo pip3 install django
-          sudo pip3 install pyyaml
-          sudo pip3 install scipy          
-      - name: setup data-science-imdb-sample repo
-        directory: /home/coder/
-        shell: /bin/bash
-        command: |
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+  type: kubernetes
+  specs:
+    kubernetes:
+      image:
+        value: index.docker.io/marktmilligan/python3-pycharm:vsix
+      container-based-vm:
+        value: false
+      cpu: 
+        value: 4
+      memory:
+        value: 8 
+      disk:
+        value: 10
+      gpu-count:
+        value: 0
+      labels:
+        value:   
+          com.coder.custom.python.version: "3.8.5"
+          com.coder.custom.pycharm.version: "2021.1.1"    
+          com.coder.custom.chargeback: "ds301"
+      value:
+        - name: install 1 vscode extensions (vsix) from open vsx
+          continue-on-error: true
+          directory: /home/coder/
+          shell: /bin/bash
+          command: SERVICE_URL=https://open-vsx.org/vscode/gallery ITEM_URL=https://open-vsx.org/vscode/item /opt/coder/code-server/bin/code-server --install-extension ms-python.python        
+        - name: install 2 vscode extensions (vsix) from image
+          continue-on-error: true
+          directory: /home/coder/
+          shell: /bin/bash
+          command: |
+            /opt/coder/code-server/bin/code-server --install-extension /vsix/ms-toolsai.jupyter.2020.12.1.vsix
+            /opt/coder/code-server/bin/code-server --install-extension /vsix/dongli.python-preview-0.0.4.vsix  
+        - name: install python packages
+          continue-on-error: true
+          directory: /home/coder/
+          shell: /bin/bash
+          command: |
+            sudo pip3 install pandas
+            sudo pip3 install scikit-learn
+            sudo pip3 install sklearn
+            sudo pip3 install matplotlib
+            sudo pip3 install flask
+            sudo pip3 install django
+            sudo pip3 install pyyaml
+            sudo pip3 install scipy          
+        - name: setup data-science-imdb-sample repo
+          continue-on-error: true
+          directory: /home/coder/
+          shell: /bin/bash
+          command: |
+            ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+            REPO_1_PATH=$HOME/data-science-imdb-sample
+            if [ -d $REPO_1_PATH ]; then
+              echo 'imdb machine learning repo already exists - skip clone'
+            else
+              git clone git@github.com:mtm20176/data-science-imdb-sample.git 
+            fi             
