@@ -20,6 +20,8 @@ workspace:
           com.coder.custom.python.version: "3.8.5"
           com.coder.custom.pycharm.version: "2021.1.1"    
           com.coder.custom.chargeback: "ds301"
+  configure:
+    start:
       value:
         - name: install 1 vscode extensions (vsix) from open vsx
           continue-on-error: true
