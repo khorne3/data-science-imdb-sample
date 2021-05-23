@@ -27,14 +27,14 @@ workspace:
           continue-on-error: true
           directory: /home/coder/
           shell: /bin/bash
-          command: SERVICE_URL=https://open-vsx.org/vscode/gallery ITEM_URL=https://open-vsx.org/vscode/item /opt/coder/code-server/bin/code-server --install-extension ms-python.python        
+          command: SERVICE_URL=https://open-vsx.org/vscode/gallery ITEM_URL=https://open-vsx.org/vscode/item /var/tmp/coder/code-server/bin/code-server --install-extension ms-python.python        
         - name: install 2 vscode extensions (vsix) from image
           continue-on-error: true
           directory: /home/coder/
           shell: /bin/bash
           command: |
-            /opt/coder/code-server/bin/code-server --install-extension /vsix/ms-toolsai.jupyter.2020.12.1.vsix
-            /opt/coder/code-server/bin/code-server --install-extension /vsix/dongli.python-preview-0.0.4.vsix  
+            /var/tmp/coder/code-server/bin/code-server --install-extension /vsix/ms-toolsai.jupyter.2020.12.1.vsix
+            /var/tmp/coder/code-server/bin/code-server --install-extension /vsix/dongli.python-preview-0.0.4.vsix  
         - name: install python packages
           continue-on-error: true
           directory: /home/coder/
