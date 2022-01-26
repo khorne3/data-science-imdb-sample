@@ -61,20 +61,5 @@ workspace:
             if [ -d $REPO_1_PATH ]; then
               echo 'imdb machine learning repo already exists - skip clone'
             else
-              git clone git@github.com:mtm20176/data-science-imdb-sample.git 
-            fi    
-            if [ -d $REPO_2_PATH ]; then
-              echo 'pandas and aws autogluon automl repo already exists - skip clone'
-            else
-              git clone git@github.com:mtm20176/pandas_automl.git 
+              git clone git@github.com:khorne3/data-science-imdb-sample.git 
             fi
-            if [ -d $REPO_3_PATH ]; then
-              echo 'sales commission python repo already exists - skip clone'
-            else
-              git clone git@github.com:mtm20176/python_dict_input_parm_example.git 
-            fi    
-            if [ -d $REPO_4_PATH ]; then
-              echo 'supervised learning and plot repo already exists - skip clone'
-            else
-              git clone git@github.com:mtm20176/notebooks-open-source.git 
-            fi                                  
